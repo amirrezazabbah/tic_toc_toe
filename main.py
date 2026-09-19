@@ -105,6 +105,16 @@ class MainWindow(QMainWindow):
                 and buttons[b].text() == self.player
                 and buttons[c].text() == self.player
             ):
+                if self.player == "𝕏":
+                    buttons[a].setStyleSheet("background-color: green;")
+                    buttons[b].setStyleSheet("background-color: green;")
+                    buttons[c].setStyleSheet("background-color: green;")
+                else:
+                    buttons[a].setStyleSheet("background-color: blue;")
+                    buttons[b].setStyleSheet("background-color: blue;")
+                    buttons[c].setStyleSheet("background-color: blue;")
+
+
                 return True
 
         return False
@@ -144,11 +154,12 @@ class MainWindow(QMainWindow):
             self.ui.pushButton_6,
             self.ui.pushButton_7,
             self.ui.pushButton_8,
-            self.ui.pushButton_9
+            self.ui.pushButton_9,
         ]
 
         for button in buttons:
             button.setText("")
+            button.setStyleSheet("")
 
         self.player = self.next_player
 
